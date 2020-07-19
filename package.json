@@ -1,0 +1,37 @@
+{
+  "name": "react-portfolio",
+  "version": "1.0.0",
+  "description": "my portfolio of work written in react",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node server.js",
+    "start:dev": "concurrently \"nodemon --ignore 'react-portfolio/*' server.js\" \"npm run client\"",
+    "client": "cd react-portfolio && npm run start",
+    "install": "cd react-portfolio && npm install",
+    "build": "cd react-portfolio && npm run build",
+    "heroku-postbuild": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maxtsimpson/react-portfolio.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maxtsimpson/react-portfolio/issues"
+  },
+  "homepage": "https://github.com/maxtsimpson/react-portfolio#readme",
+  "devDependencies": {
+    "concurrently": "^4.1.0",
+    "nodemon": "^1.18.7"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.16.3",
+    "if-env": "^1.0.4",
+    "mongoose": "^5.3.16"
+  }
+}
