@@ -21,14 +21,11 @@ function Nav() {
                 preventScrolling: true
             }}
         >
-            <NavItem href="Portfolio">
-                Portfolio
+            <NavItem href="MyShed">
+                MyShed
             </NavItem>
-            <NavItem href="AboutMe">
-                About me
-            </NavItem>
-            <NavItem href="Contact">
-                Contact
+            <NavItem href="NewsFeed">
+                NewsFeed
             </NavItem>
         </Navbar>
     )

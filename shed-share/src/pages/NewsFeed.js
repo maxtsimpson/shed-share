@@ -3,7 +3,7 @@ import { Row, Col, Card, CardTitle, Icon } from 'react-materialize'
 
 const NewsFeed = props => {
     return (
-        <div></div>
+        <div>coming soon</div>
     )
 }
 

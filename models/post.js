@@ -7,6 +7,7 @@ const Schema = mongoose.Schema;
 const postSchema = new Schema({
   title: { type: String, required: true },
   body: String,
+  videoLink: String,
   date: { type: Date, default: Date.now }
 });
 
