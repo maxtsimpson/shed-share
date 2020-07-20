@@ -34,17 +34,17 @@ function ProjectTimeline() {
         </>
     )
 
-    return (
-        <Timeline>
-            {steps.map((step, index) => {
-                <TimelineEvent title={stepCategory.Title}
-                    createdAt={stepCreatedAt}
-                    icon={<MaterialIcon icon={stepCategory.Icon} color={timeLineColor}></MaterialIcon>}
-                >
-                </TimelineEvent>
-            })}
-        </Timeline>
-    )
+    // return (
+    //     <Timeline>
+    //         {steps.map((step, index) => {
+    //             <TimelineEvent title={stepCategory.Title}
+    //                 createdAt={stepCreatedAt}
+    //                 icon={<MaterialIcon icon={stepCategory.Icon} color={timeLineColor}></MaterialIcon>}
+    //             >
+    //             </TimelineEvent>
+    //         })}
+    //     </Timeline>
+    // )
 }
 
 export default ProjectTimeline
