@@ -1,5 +1,5 @@
 {
-  "name": "react-portfolio",
+  "name": "shed-share",
   "version": "1.0.0",
   "description": "my portfolio of work written in react",
   "main": "server.js",
@@ -7,22 +7,22 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:prod": "node server.js",
-    "start:dev": "concurrently \"nodemon --ignore 'react-portfolio/*' server.js\" \"npm run client\"",
-    "client": "cd react-portfolio && npm run start",
-    "install": "cd react-portfolio && npm install",
-    "build": "cd react-portfolio && npm run build",
+    "start:dev": "concurrently \"nodemon --ignore 'shed-share/*' server.js\" \"npm run client\"",
+    "client": "cd shed-share && npm run start",
+    "install": "cd shed-share && npm install",
+    "build": "cd shed-share && npm run build",
     "heroku-postbuild": "npm run build"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/maxtsimpson/react-portfolio.git"
+    "url": "git+https://github.com/maxtsimpson/shed-share.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/maxtsimpson/react-portfolio/issues"
+    "url": "https://github.com/maxtsimpson/shed-share/issues"
   },
-  "homepage": "https://github.com/maxtsimpson/react-portfolio#readme",
+  "homepage": "https://github.com/maxtsimpson/shed-share#readme",
   "devDependencies": {
     "concurrently": "^4.1.0",
     "nodemon": "^1.18.7"
