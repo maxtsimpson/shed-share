@@ -24,11 +24,19 @@ function ProjectTimeline() {
                     I've sketched out a diagram with some measurements. used the kitchen bench height as a guide for my bench height
                 </TimelineEvent>
                 <TimelineEvent
+                    className="TimelineEvent"
                     title="Build"
                     createdAt="2020-07-16 09:06 AM"
                     icon={<MaterialIcon icon="construction" color={timeLineColor}></MaterialIcon>}
                 >
-                    Cut some old patio steel to length and started on some welds.
+                    <Row>
+                        <Col>
+                            <img src="https://i.pinimg.com/originals/68/7f/9a/687f9a8f44a1ad775bc4afd196d15109.jpg"></img>
+                        </Col>
+                        <Col>
+                            <p>Cut some old patio steel to length and started on some welds.</p>
+                        </Col>
+                    </Row>
                 </TimelineEvent>
             </Timeline>
         </>
@@ -37,10 +45,20 @@ function ProjectTimeline() {
     // return (
     //     <Timeline>
     //         {steps.map((step, index) => {
-    //             <TimelineEvent title={stepCategory.Title}
+
+    //             <TimelineEvent title={stepCategory.title}
     //                 createdAt={stepCreatedAt}
     //                 icon={<MaterialIcon icon={stepCategory.Icon} color={timeLineColor}></MaterialIcon>}
     //             >
+                    // <Row>
+                    // need an if step has an image insert the below
+                    //      <Col>
+                    //          <img></img>
+                    //      </Col>
+                    //     <Col>
+                    //         <p>Cut some old patio steel to length and started on some welds.</p>
+                    //     </Col>
+                    // </Row>
     //             </TimelineEvent>
     //         })}
     //     </Timeline>

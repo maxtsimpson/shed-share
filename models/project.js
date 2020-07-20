@@ -1,10 +1,11 @@
 const mongoose = require("mongoose");
+const Step = require("./step")
 const Schema = mongoose.Schema;
+
 
 const projectSchema = new Schema({
   title: { type: String, required: true },
-  deployedURL: { type: String, required: true },
-  gitHubURL: { type: String, required: true },
+  steps: [Step],
   tags: [{type: String}],
 });
 
