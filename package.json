@@ -11,7 +11,8 @@
     "client": "cd shed-share && npm run start",
     "install": "cd shed-share && npm install",
     "build": "cd shed-share && npm run build",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "npm run build",
+    "seed": "node ./seeders/"
   },
   "repository": {
     "type": "git",

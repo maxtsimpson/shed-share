@@ -1,10 +1,17 @@
 const express = require("express");
 const path = require("path");
 const connection = require("./config/mongo.js")
-
+const session = require("express-session");
+const passport = require('./config/passport');
 const routes = require("./routes");
+const compression = require('compression')
+
+
 const app = express();
 const PORT = process.env.PORT || 3001;
+
+//use compression 
+app.use(compression({}))
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -14,7 +21,11 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("shed-share/build"));
 }
 // Add routes, both API and view
-app.use("/api", routes);
+app.use("./routes", routes);
+
+app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Send every other request to the React app
 // Define any API routes before this runs

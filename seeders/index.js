@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const connection = require("./config/mongo.js")
+const connection = require("../config/mongo")
 const basename = path.basename(__filename);
 
 const seedFunctions = {}
@@ -16,10 +16,10 @@ connection.then(() => {
             console.log(`====== running ${file} seed ========`)
             await seedFunctions[file]()
         })
-        .then(() => {
+        // .then(() => {
             console.log("***** completed seed operation ******")
             process.exit(0);
-        });
+        // });
 })
     .catch(err => {
         console.error(err);
