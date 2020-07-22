@@ -4,6 +4,7 @@ import Nav from "./components/Nav";
 import MyShed from "./pages/MyShed"
 import NewsFeed from "./pages/NewsFeed"
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Home from './pages/Home';
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
       </div>
       <div>
         <Switch>
-          <Route exact path="/" component={MyShed} />
+          <Route exact path="/" component={Home} />
           <Route path="/MyShed" component={MyShed} />
           <Route path="/NewsFeed" component={NewsFeed} />
         </Switch>

@@ -1,10 +1,11 @@
 import React, { useEffect } from "react";
-import ProjectTimeline from '../components/ProjectTimeLine'
+import Project from '../components/Project'
 
 const Home = props => {
     return(
         <> 
         <h1>coming soon</h1>
+        <Project></Project>
         </>
     )
 }
