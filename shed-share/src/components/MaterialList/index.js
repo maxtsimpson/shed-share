@@ -1,10 +1,10 @@
 import React from "react";
 import M, { Navbar, Icon, NavItem } from 'react-materialize'
 
-function Login() {
+function MaterialList() {
     return (
         <div></div>
     )
 }
 
-export default Login
+export default MaterialList
