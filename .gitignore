@@ -1,3 +1,4 @@
+.env
 /node_modules
 /shed-share/build
 /shed-share/node_modules
