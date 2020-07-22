@@ -33,10 +33,7 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "./shed-share/build/index.html"));
 });
 
-// Connect to the Mongo DB
-// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactcms");
-
-// Start the API server
+// Connect to the Mongo DB then start the API server
 connection.then(() => {
   app.listen(PORT, function () {
     console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
