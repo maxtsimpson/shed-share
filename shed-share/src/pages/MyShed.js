@@ -1,10 +1,18 @@
 import React, { useEffect } from "react";
 import ProjectTimeline from '../components/ProjectTimeLine'
+import { Row, Col, Card, CardTitle, Icon } from 'react-materialize'
 
 const MyShed = props => {
     return(
         <> 
-        <h1>coming soon</h1>
+        <Row>
+            <Col>
+                
+            </Col>
+            <Col>
+                
+            </Col>
+        </Row>
         <ProjectTimeline></ProjectTimeline>
         </>
     )
