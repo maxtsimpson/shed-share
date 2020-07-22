@@ -41,6 +41,28 @@ function ProjectTimeline() {
             </Timeline>
         </>
     )
+
+    // return (
+    //     <Timeline>
+    //         {steps.map((step, index) => {
+
+    //             <TimelineEvent title={stepCategory.title}
+    //                 createdAt={stepCreatedAt}
+    //                 icon={<MaterialIcon icon={stepCategory.Icon} color={timeLineColor}></MaterialIcon>}
+    //             >
+                    // <Row>
+                    // need an if step has an image insert the below
+                    //      <Col>
+                    //          <img></img>
+                    //      </Col>
+                    //     <Col>
+                    //         <p>Cut some old patio steel to length and started on some welds.</p>
+                    //     </Col>
+                    // </Row>
+    //             </TimelineEvent>
+    //         })}
+    //     </Timeline>
+    // )
 }
 
 export default ProjectTimeline
