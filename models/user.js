@@ -15,7 +15,7 @@ const userSchema = new Schema(
         },
         facebook: {
             type: String,
-            unique: true,
+            required: false,
         },
         password: { type: String, required: true },
     },

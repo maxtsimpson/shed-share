@@ -5,8 +5,11 @@ const connection = require("../config/mongo")
 
 const seedUsers = async (numberOfUsers = 20) => {
 
+    // new Promise((resolve,reject) => {
+
+    // })
     //delete the existing users
-    User.collection.deleteMany();
+    await db.User.collection.deleteMany();
 
     for (let index = 0; index < numberOfUsers; index++) {
         const user = new db.User({
@@ -18,9 +21,10 @@ const seedUsers = async (numberOfUsers = 20) => {
             password: faker.internet.password(),
         })
 
+
         //need to use a try-catch as its possible the userName won't be unique
         try {
-            db.User.create(user)
+            await db.User.create(user)
         }
         catch(error) {
             //need to manually run this with two usernames to check the error i get back
@@ -29,4 +33,4 @@ const seedUsers = async (numberOfUsers = 20) => {
     }
 }
 
-export default seedUsers
+module.exports = seedUsers
