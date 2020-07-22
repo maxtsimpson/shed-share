@@ -5,6 +5,7 @@ const Schema = mongoose.Schema;
 
 const projectSchema = new Schema({
   title: { type: String, required: true },
+  displayPic: { type:Buffer },
   steps: [Step],
   tags: [{type: String}],
 });
