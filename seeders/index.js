@@ -2,7 +2,8 @@ const fs = require('fs');
 const path = require('path');
 const connection = require("../config/mongo")
 const basename = path.basename(__filename);
-const users = require("./users")
+const users = require("./users");
+const projects = require("./projects")
 
 const seedFunctions = {}
 
@@ -27,11 +28,10 @@ const seedFunctions = {}
 //         process.exit(1);
 //     });
 
-connection.then(() => {
-    users()
-    .then(() => {
-        process.exit(0);
-    })
+connection.then(async () => {
+    await users()
+    await projects()
+    process.exit(0);
 })
 .catch(err => {
     console.error(err);

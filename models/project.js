@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 
 const projectSchema = new Schema({
   title: { type: String, required: true },
-  displayPic: { type:Buffer, required: true },
+  displayPic: { type:Buffer },
   steps: [Step],
   tags: [{type: String}],
   user_id: { type: Schema.Types.ObjectId, ref: "User", required: true },

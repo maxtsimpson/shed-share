@@ -5,9 +5,6 @@ const connection = require("../config/mongo")
 
 const seedUsers = async (numberOfUsers = 20) => {
 
-    // new Promise((resolve,reject) => {
-
-    // })
     //delete the existing users
     await db.User.collection.deleteMany();
 
