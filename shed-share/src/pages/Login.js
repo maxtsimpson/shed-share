@@ -3,7 +3,9 @@ import Login from "../components/auth/Login";
 
 const Home = props => {
     return(
-        <Login></Login>
+        <div>
+            <Login></Login>
+        </div>
     )
 }
 

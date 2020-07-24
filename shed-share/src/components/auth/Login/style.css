@@ -1,0 +1,21 @@
+/* #login {
+    width: 60%;
+    height: 50%;
+    align-self: center;
+}
+
+.card {
+    width: 10vw;
+    height: 10vh;
+    align-self: center;
+} */
+
+a, p, .input-field, Button {
+    display: block;
+}
+
+.card a {
+    width: auto;
+    min-width: 55%;
+    margin: 5%;
+}
