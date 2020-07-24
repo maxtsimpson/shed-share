@@ -10,7 +10,6 @@ const seedUsers = async (numberOfUsers = 20) => {
 
     for (let index = 0; index < numberOfUsers; index++) {
         const user = new db.User({
-            username: faker.internet.userName(),
             firstName: faker.name.firstName(),
             lastName: faker.name.lastName(),
             avatar: faker.image.avatar(),

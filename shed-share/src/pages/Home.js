@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Project from '../components/Project'
 
 const Home = props => {
