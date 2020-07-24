@@ -19,7 +19,7 @@ function Login() {
   const { setAuthTokens } = useAuth();
 
   function postLogin() {
-    axios.post("/auth/login", {
+    axios.post("api/auth/login", {
       email,
       password
     }).then(result => {
@@ -36,7 +36,7 @@ function Login() {
   }
 
   function postFBLogin() {
-    axios.post("/auth/facebook", {
+    axios.get("http://localhost:3001/api/auth/facebook", {
     }).then(result => {
       if (result.status === 200) {
         setAuthTokens(result.data);
