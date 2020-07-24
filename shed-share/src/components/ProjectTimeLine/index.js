@@ -1,7 +1,7 @@
 import React from "react";
-import { Row, Col, Card, CardTitle, Icon } from 'react-materialize'
+import { Row, Col } from 'react-materialize'
 import { Timeline, TimelineEvent } from 'react-event-timeline'
-import MaterialIcon, { colorPalette } from 'material-icons-react';
+import MaterialIcon from 'material-icons-react';
 import './style.css'
 
 const timeLineColor = '#212121'
