@@ -19,11 +19,14 @@ function Login() {
   const { setAuthTokens } = useAuth();
 
   function postLogin() {
-    axios.post("api/auth/login", {
+    const loginURL = (process.env.ROOT_URL || "http://localhost:3001") + "/api/auth/login"
+    console.log(loginURL)
+    axios.post(loginURL, {
       email,
       password
     }).then(result => {
       if (result.status === 200) {
+        console.log({result})
         setAuthTokens(result.data);
         setLoggedIn(true);
       } else {
@@ -36,7 +39,7 @@ function Login() {
   }
 
   function postFBLogin() {
-    axios.get("http://localhost:3001/api/auth/facebook", {
+    axios.get(process.env.ROOT_URL + "/api/auth/facebook", {
     }).then(result => {
       if (result.status === 200) {
         setAuthTokens(result.data);

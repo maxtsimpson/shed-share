@@ -9,13 +9,20 @@ router
 router
     .route('/auth/facebook/callback')
     .get(passport.authenticate('facebook', { failureRedirect: '/' }), function (req, res) {
-        res.redirect('/');
+        //actually i dont think i want to redirect. should just return the status and any user tokens
+        console.log("finished fb auth")
+        console.log({req})
+        console.log({res})
+        // res.redirect('/');
     });
 
+console.log("adding auth/login route")
 router
     .route("/auth/login")
     .post(passport.authenticate("local"), function (req, res) {
-        res.json(req.user);
+        console.log("finished local auth")
+        console.log({req})
+        console.log({res})
     });
 
 router
@@ -28,17 +35,35 @@ router
                         .then(function () {
                             res.redirect(307, "/auth/login");
                         })
-                        .catch(function (err) {
-                            //the error returned from sequalize is a big object so need to get the actual error message
-                            res.status(401).json(err.errors[0].message);
+                        .catch(function (error) {
+                            //the error returned from mongoose is not friendly so set a more friendly error description
+                            let errorDescription = 'something went wrong'
+                            switch (error.code) {
+                                case 11000:
+                                        errorDescription = `this email already exists`
+                                    break;
+                            
+                                default:
+                                    break;
+                            }
+
+                            res.status(401).json({
+                                errorCode: error.code,
+                                errorDescription,
+                            });
                         });
                 } else {
                     res.status(401).json('There is already a user with this email address')
                 }
             })
-            .catch(function (err) {
+            .catch(function (error) {
                 //the error returned from sequalize is a big object so need to get the actual error message
-                res.status(401).json(err.errors[0].message);
+                const errorDescription = 'something went wrong'
+                
+                res.status(401).json({
+                    errorCode: error.code,
+                    errorDescription,
+                });
             });
     });
 

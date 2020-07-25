@@ -6,6 +6,7 @@ import NewsFeed from "./pages/NewsFeed"
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './pages/Home';
 import Login from './pages/Login';
+import Signup from './pages/Signup';
 import { AuthContext } from './context/auth';
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
             <Route path="/MyShed" component={MyShed} />
             <Route path="/NewsFeed" component={NewsFeed} />
             <Route path="/Login" component={Login} />
+            <Route path="/Signup" component={Signup} />
           </Switch>
         </div>
       </Router>
