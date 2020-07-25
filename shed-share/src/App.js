@@ -8,6 +8,7 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import { AuthContext } from './context/auth';
+import PrivateRoute from './PrivateRoute';
 
 function App() {
   const [authTokens, setAuthTokens] = useState();
@@ -26,7 +27,7 @@ function App() {
         <div>
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route path="/MyShed" component={MyShed} />
+            <PrivateRoute path="/MyShed" component={MyShed} />
             <Route path="/NewsFeed" component={NewsFeed} />
             <Route path="/Login" component={Login} />
             <Route path="/Signup" component={Signup} />

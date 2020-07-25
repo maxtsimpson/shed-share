@@ -53,10 +53,10 @@ function Login() {
     });
   }
 
-  // if (isLoggedIn) {
-  //   return <div></div>
-  //   return <Redirect to="/" />;
-  // }
+  if (isLoggedIn) {
+    return <Redirect to="/" />;
+  }
+  
   return (
     <Row
       className="center"

@@ -22,16 +22,19 @@ app.use(express.json());
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("shed-share/build"));
 }
-// Add routes, both API and view
-app.use("/api", routes);
+
+
+app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
+app.use(passport.initialize());
+app.use(passport.session());
+
 app.all('/*', function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   next();
 });
 
-app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
-app.use(passport.initialize());
-app.use(passport.session());
+// Add routes, both API and view
+app.use("/api", routes);
 
 // Send every other request to the React app
 // Define any API routes before this runs

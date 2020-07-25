@@ -17,25 +17,35 @@ passport.use(new LocalStrategy(
     },
     function(email, password, done) {
       // When a user tries to sign in this code runs
+      console.log(`finding user from mongo email: ${email}`)
       db.User.findOne({
-        where: {
           email: email
-        }
-      }).then(function(dbUser) {
+      })
+      .then(function(dbUser) {
+        
+        console.log({dbUser})
         // If there's no user with the given email
         if (!dbUser) {
           return done(null, false, {
             message: "Incorrect email."
           });
         }
+        
+        console.log('user found password matching now')
         // If there is a user with the given email, but the password the user gives us is incorrect
-        else if (!dbUser.validPassword(password)) {
+        if (!dbUser.isValidPassword(password)) {
           return done(null, false, {
             message: "Incorrect password."
           });
         }
+
+        console.log('local passport auth successful')
         // If none of the above, return the user
         return done(null, dbUser);
+      })
+      .catch(error => {
+        console.log('error in passport local auth');
+        console.log({error})
       });
     }
   ));

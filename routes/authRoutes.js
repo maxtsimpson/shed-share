@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const passport = require('passport');
+const passport = require('../config/passport');
 const db = require("../models")
 
 router
@@ -11,8 +11,9 @@ router
     .get(passport.authenticate('facebook', { failureRedirect: '/' }), function (req, res) {
         //actually i dont think i want to redirect. should just return the status and any user tokens
         console.log("finished fb auth")
-        console.log({req})
-        console.log({res})
+        // console.log({req})
+        // console.log({res})
+        res.status(200).json(req.user)
         // res.redirect('/');
     });
 
@@ -21,8 +22,9 @@ router
     .route("/auth/login")
     .post(passport.authenticate("local"), function (req, res) {
         console.log("finished local auth")
-        console.log({req})
-        console.log({res})
+        // console.log({req})
+        // console.log({res})
+        res.status(200).json(req.user)
     });
 
 router
