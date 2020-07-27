@@ -1,12 +1,11 @@
-const { uuid } = require('uuidv4');
 const faker = require('faker')
 let db = require("../models");
 const connection = require("../config/mongo")
 
 const seedUsers = async (numberOfUsers = 20) => {
 
-    //delete the existing users
-    await db.User.collection.deleteMany();
+    //delete the existing users except the max@max.com user
+    await db.User.collection.deleteMany({ email: { $ne: 'max@max.com'}});
 
     for (let index = 0; index < numberOfUsers; index++) {
         const user = new db.User({
@@ -16,7 +15,6 @@ const seedUsers = async (numberOfUsers = 20) => {
             email: faker.internet.email(),
             password: faker.internet.password(),
         })
-
 
         //need to use a try-catch as its possible the userName won't be unique
         try {

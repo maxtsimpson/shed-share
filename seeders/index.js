@@ -4,33 +4,14 @@ const connection = require("../config/mongo")
 const basename = path.basename(__filename);
 const users = require("./users");
 const projects = require("./projects")
+const posts = require("./posts")
 
 const seedFunctions = {}
-
-// connection.then(() => {
-//     fs
-//         .readdirSync(__dirname)
-//         .filter(file => {
-//             return (file.indexOf('.') !== 0) && (file !== basename) && (file.slice(-3) === '.js');
-//         })
-//         .forEach(async file => {
-//             seedFunctions[file] = require(path.join(__dirname, file))
-//             console.log(`====== running ${file} seed ========`)
-//             await seedFunctions[file]()
-//         })
-//         // .then(() => {
-//             console.log("***** completed seed operation ******")
-//             process.exit(0);
-//         // });
-// })
-//     .catch(err => {
-//         console.error(err);
-//         process.exit(1);
-//     });
 
 connection.then(async () => {
     await users()
     await projects()
+    await posts()
     process.exit(0);
 })
 .catch(err => {

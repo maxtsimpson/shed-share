@@ -1,4 +1,3 @@
-const { uuid } = require('uuidv4');
 const faker = require('faker')
 let db = require("../models");
 const connection = require("../config/mongo")
@@ -7,9 +6,8 @@ const seedProjects = async (numberOfProjects = 20) => {
 
     await db.Project.collection.deleteMany();
 
-    const userID = await db.User.findOne({}).then(user => user._id)
+    const userID = await db.User.findOne({$or: [{email: 'max@max.com'},{ email: { $ne: null }}]}).then(user => user._id)
     
-    // for (let index = 0; index < numberOfProjects; index++) {
     const project = new db.Project({
         title: 'retrofit shelves',
         displayPic: null,
@@ -49,7 +47,6 @@ const seedProjects = async (numberOfProjects = 20) => {
         user_id: userID,
     })
 
-
     //need to use a try-catch as its possible the userName won't be unique
     try {
         await db.Project.create(project)
@@ -58,7 +55,7 @@ const seedProjects = async (numberOfProjects = 20) => {
         //need to manually run this with two usernames to check the error i get back
         console.log(error)
     }
-    // }
+    
 }
 
 module.exports = seedProjects
