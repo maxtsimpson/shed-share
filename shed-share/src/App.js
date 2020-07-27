@@ -22,10 +22,10 @@ function App() {
 
   // <AuthContext.Provider value={{ authTokens, setAuthTokens: setTokens }}></AuthContext.Provider>
 
-  const authTokens = useContext(AuthContext);
+  const auth = useContext(AuthContext);
 
   return (
-    <AuthContext.Provider value={{ authTokens, setAuthTokens: setTokens }}>
+    <AuthContext.Provider value={{ auth, setAuthTokens: setTokens }}>
       <Router>
         <div>
           <Nav></Nav>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import NewsItem from "../components/NewsItem";
 import API from "../utils/API";
-import { Row, Col, Card, CardTitle, Icon } from 'react-materialize'
+import { Row } from 'react-materialize'
 
 const NewsFeed = props => {
 
@@ -17,9 +17,9 @@ const NewsFeed = props => {
 
     return (
         <Row>
-            {newsItems.map((item) => {
+            {/* {newsItems.map((item) => {
                 <NewsItem item={item}></NewsItem>
-            })}
+            })} */}
         </Row>
     )
 }

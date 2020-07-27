@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Card, CardTitle, Icon } from 'react-materialize'
 
 const NewsItem = post => {
-    let { _id, title, body, videoLink, img } = post
+    let { _id, title, body, videoLink, img, User } = post
     if (!img) {
         img = "https://materializecss.com/images/sample-1.jpg"
     }
@@ -17,7 +17,7 @@ const NewsItem = post => {
                 ]
             }
             closeIcon={<Icon>close</Icon>}
-            header={<CardTitle image={img}>{title && <p>title</p>}</CardTitle>}
+            header={<CardTitle image={User.avatar}>{title && <p>title</p>}</CardTitle>}
             horizontal
             revealIcon={<Icon>more_vert</Icon>}
         >
