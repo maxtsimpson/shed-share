@@ -58,9 +58,6 @@ userSchema.methods.comparePassword = function comparePassword(
 };
 
 userSchema.methods.isValidPassword = function(password) {
-    const isValid = bcrypt.compareSync(password, this.password);
-    console.log(`is valid password: ${isValid}`)
-    return isValid
     return bcrypt.compareSync(password, this.password);
 };
 
