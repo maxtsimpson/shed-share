@@ -11,7 +11,7 @@ const Home = props => {
     return(
         // <AuthContext.Consumer= ></AuthContext.Consumer>
         <> 
-        <h1>coming soon</h1>
+        <h1>welcome home</h1>
         <Project></Project>
         </>
     )

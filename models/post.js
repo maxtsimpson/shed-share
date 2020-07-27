@@ -8,6 +8,7 @@ const postSchema = new Schema({
   title: { type: String, required: true },
   body: String,
   videoLink: String,
+  img: Buffer,
   user_id: { type: Schema.Types.ObjectId, ref: "User", required: true },
   // date: { type: Date, default: Date.now } this is redundant, i think mongoose does this for you anyway
 });

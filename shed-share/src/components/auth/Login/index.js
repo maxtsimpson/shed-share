@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useState,useContext } from "react";
 import { Link, Redirect } from "react-router-dom";
 import axios from 'axios';
 import logoImg from "../../../shedShare.png";
 import { Col, Card, CardTitle, TextInput, Button, Row } from 'react-materialize'
-import { useAuth } from "../../../context/auth.js";
+import { useAuth,AuthContext } from "../../../context/auth.js";
 import './style.css'
 // import { Card, Logo, Form, Input, Button, Error } from "../components/AuthForms";
 
@@ -17,6 +17,9 @@ function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { setAuthTokens } = useAuth();
+  const Auth = useContext(AuthContext);
+
+  console.log({Auth})
 
   function postLogin() {
     const loginURL = (process.env.ROOT_URL || "http://localhost:3001") + "/api/auth/login"
@@ -53,9 +56,9 @@ function Login() {
     });
   }
 
-  if (isLoggedIn) {
-    return <Redirect to="/" />;
-  }
+  // if (isLoggedIn) {
+  //   return <Redirect to="/NewsFeed" />;
+  // }
   
   return (
     <Row

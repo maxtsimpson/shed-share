@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import './App.css';
 import Nav from "./components/Nav";
 import MyShed from "./pages/MyShed"
@@ -7,8 +7,8 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
-import { AuthContext } from './context/auth';
-import PrivateRoute from './PrivateRoute';
+import { useAuth, AuthContext } from './context/auth';
+import PrivateRoute from './utils/PrivateRoute';
 
 function App() {
   const [authTokens, setAuthTokens] = useState();
@@ -18,6 +18,12 @@ function App() {
     setAuthTokens(data);
   }
 
+  // const { setAuthTokens } = useAuth();
+
+  // <AuthContext.Provider value={{ authTokens, setAuthTokens: setTokens }}></AuthContext.Provider>
+
+  const authTokens = useContext(AuthContext);
+
   return (
     <AuthContext.Provider value={{ authTokens, setAuthTokens: setTokens }}>
       <Router>
@@ -26,9 +32,10 @@ function App() {
         </div>
         <div>
           <Switch>
-            <Route exact path="/" component={Home} />
+            <Route exact path="/" component={Login} />
             <PrivateRoute path="/MyShed" component={MyShed} />
             <Route path="/NewsFeed" component={NewsFeed} />
+            <Route path="/Home" component={Home} />
             <Route path="/Login" component={Login} />
             <Route path="/Signup" component={Signup} />
           </Switch>
