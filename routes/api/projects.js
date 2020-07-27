@@ -14,12 +14,5 @@ router
   .put(projectsController.update)
   .delete(projectsController.remove);
 
-// Matches with "/api/projects/user/:id"
-router
-  .route("/projects/user/:id")
-  .get(projectsController.findByUserId)
-//   .put(projectsController.update)
-//   .delete(projectsController.remove);
-
 
 module.exports = router;
