@@ -17,6 +17,18 @@ export default {
 
     saveUser: () => {
 
+    },
+
+    getNewsPosts: () => {
+
+    },
+
+    saveNewsPost: () => {
+
+    },
+
+    replyToNewsPost: () => {
+        
     }
 
 };

@@ -1,11 +1,26 @@
-import React, { useEffect } from "react";
-// import { Row, Col, Card, CardTitle, Icon } from 'react-materialize'
+import React, { useEffect, useState } from "react";
+import NewsItem from "../components/NewsItem";
+import API from "../utils/API";
+import { Row, Col, Card, CardTitle, Icon } from 'react-materialize'
 
 const NewsFeed = props => {
-    
-    
+
+    const [newsItems, setNewsItems] = useState([])
+
+    useEffect(() => {
+        API.getNewsPosts()
+            .then((results) => {
+                setNewsItems(results)
+            })
+            .catch(error => console.error(error))
+    }, [])
+
     return (
-        <div>coming soon</div>
+        <Row>
+            {newsItems.map((item) => {
+                <NewsItem item={item}></NewsItem>
+            })}
+        </Row>
     )
 }
 
