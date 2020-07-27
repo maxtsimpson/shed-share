@@ -1,4 +1,5 @@
 const db = require("../models");
+const mongoose = require('mongoose')
 
 // Defining methods for the ProjectsController
 module.exports = {
@@ -10,6 +11,14 @@ module.exports = {
   },
   findById: function(req, res) {
     db.Project.findById(req.params.id)
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
+  findByUserId: function(req, res) {
+    console.log('========= in findbyUserId ========')
+    const user_id = new mongoose.Types.ObjectId(req.params.id)
+    console.log(user_id)
+    db.Project.find(user_id)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
