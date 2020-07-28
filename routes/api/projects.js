@@ -14,5 +14,11 @@ router
   .put(projectsController.update)
   .delete(projectsController.remove);
 
+router
+  .route("/projects/users/:id")
+  .get(projectsController.findByUserId)
+  .put(projectsController.update)
+  .delete(projectsController.remove);
+
 
 module.exports = router;

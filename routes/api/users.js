@@ -8,8 +8,9 @@ router
   .post(usersController.create);
 
 // Matches with "/api/users/:id"
+// i.e. to hit this route use: /api/users/id?id=5f1eaf18ddadac05c4e8cc34
 router
-  .route("/users:id")
+  .route("/users/:id")
   .get(usersController.findById)
   .put(usersController.update)
   .delete(usersController.remove);

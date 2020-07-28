@@ -1,5 +1,7 @@
 const db = require("../models");
+const User = require("../models/user")
 const mongoose = require('mongoose')
+const ObjectID = require('mongodb').ObjectID; 
 
 // Defining methods for the UsersController
 module.exports = {
@@ -10,8 +12,11 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   findById: function(req, res) {
-    db.User.findById(req.params.id)
-      .then(dbModel => res.json(dbModel))
+    db.User.findById({ _id: req.query.id})
+      .then(dbModel => {
+        console.log('returned a db model in findById')
+        res.json(dbModel)
+      })
       .catch(err => res.status(422).json(err));
   },
   create: function(req, res) {
