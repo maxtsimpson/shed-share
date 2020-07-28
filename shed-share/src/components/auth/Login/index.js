@@ -56,9 +56,9 @@ function Login() {
     });
   }
 
-  // if (isLoggedIn) {
-  //   return <Redirect to="/NewsFeed" />;
-  // }
+  if (isLoggedIn) {
+    return <Redirect to="/NewsFeed" />;
+  }
   
   return (
     <Row
@@ -67,8 +67,6 @@ function Login() {
       <Col m={3} s={0}></Col>
       <Col m={6} s={12}>
         <Card
-          // id='login'
-          // header={<CardTitle>Card Title</CardTitle>}
           className="center"
         >
           <h1>Login</h1>

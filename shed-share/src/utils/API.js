@@ -1,18 +1,26 @@
 import axios from "axios";
 
 // Gets my github repos and returns them as "projects"
+const baseURL = "http://localhost:3001"
+
 export default {
     // getProjectsForUser: (user) => {
     //     axios.get('/api/projects')
     //     .then(results => results)
     // },
 
+    getProjectList: () => {
+        const url = baseURL + '/api/projects'
+        return axios.get(url)
+        .then(results => results)
+    },
+
     saveProject: (project) => {
 
     },
 
     getUser: (user) => {
-        const url = '/api/users' + 'id=' + user._id
+        const url = baseURL + '/api/users/id' + '?id=' + user._id
         return axios.get(url)
         .then(results => results)
     },
@@ -22,7 +30,9 @@ export default {
     },
 
     getNewsPosts: () => {
-
+        const url = baseURL + '/api/posts'
+        return axios.get(url)
+        .then(results => results)
     },
 
     saveNewsPost: () => {
