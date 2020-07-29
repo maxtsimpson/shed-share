@@ -45,7 +45,7 @@ function ProjectTabs() {
             title={project.title}
           >
             <ProjectTimeLine key={project._id} steps={project.steps}></ProjectTimeLine>
-            <AddStepButton></AddStepButton>
+            <AddStepButton project={project}></AddStepButton>
           </Tab>
         )
       })}
