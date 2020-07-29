@@ -11,8 +11,10 @@ export default {
 
     getProjectList: () => {
         const url = baseURL + '/api/projects'
+        console.log(`getting projectList from ${url}`)
         return axios.get(url)
         .then(results => results)
+        .catch(error => console.error(error))
     },
 
     saveProject: (project) => {

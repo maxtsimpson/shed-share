@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ProjectTimeline from '../components/ProjectTimeLine'
 import ProjectCarousel from "../components/ProjectCarousel";
+import ProjectTabs from "../components/ProjectTabs";
 import { Row, Col, Card, CardTitle, Icon } from 'react-materialize'
 import API from "../utils/API";
 
@@ -23,16 +24,11 @@ const MyShed = props => {
     }, [])
 
     return(
-        <> 
-        <Row>
-            <Col>
-                <ProjectCarousel projects={projects}></ProjectCarousel>
-            </Col>
-            <Col>
-                <ProjectTimeline></ProjectTimeline>  
+        <Row style={{height: "100vh"}}>
+            <Col m={12} s={12}>
+                <ProjectTabs/>
             </Col>
         </Row>
-        </>
     )
 }
 

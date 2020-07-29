@@ -9,10 +9,9 @@ const Home = props => {
 
 
     return(
-        // <AuthContext.Consumer= ></AuthContext.Consumer>
         <> 
         <h1>welcome home</h1>
-        <Project></Project>
+            <Project style={{height: "100%"}}></Project>
         </>
     )
 }
