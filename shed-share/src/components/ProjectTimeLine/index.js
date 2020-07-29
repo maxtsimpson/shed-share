@@ -18,7 +18,7 @@ function ProjectTimeline() {
                 </TimelineEvent>
                 <TimelineEvent title="Design"
                     createdAt="2020-07-14 10:06 PM"
-                    icon={<MaterialIcon icon="design_services" color={timeLineColor}></MaterialIcon>}
+                    // icon={<MaterialIcon icon="design_services" color={timeLineColor}></MaterialIcon>}
 
                 >
                     I've sketched out a diagram with some measurements. used the kitchen bench height as a guide for my bench height
@@ -27,7 +27,7 @@ function ProjectTimeline() {
                     className="TimelineEvent"
                     title="Build"
                     createdAt="2020-07-16 09:06 AM"
-                    icon={<MaterialIcon icon="construction" color={timeLineColor}></MaterialIcon>}
+                    // icon={<MaterialIcon icon="construction" color={timeLineColor}></MaterialIcon>}
                 >
                     <Row>
                         <Col>

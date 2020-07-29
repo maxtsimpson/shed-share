@@ -6,7 +6,12 @@ import API from "../../utils/API";
 
 function ProjectCarousel() {
 
-    const [projects, setProjects] = useState();
+    const dummyProject = {
+        title: "Dummy",
+        displayPic: ""
+    }
+
+    const [projects, setProjects] = useState([dummyProject]);
     const [content, setContent] = useState();
 
     const populateProjects = () => {
@@ -19,9 +24,16 @@ function ProjectCarousel() {
             .catch(error => console.error(error))
     }
 
+
     useEffect(() => {
-        populateProjects()
+        API.getProjectList()
+            .then(results => setProjects(results.data))
+            .catch(error => console.error(error))
     }, [])
+
+    // useEffect(() => {
+    //     populateProjects()
+    // }, [])
 
     function convertProjectsToCarousel() {
         const content = projects.map((project, index) => (
@@ -36,18 +48,38 @@ function ProjectCarousel() {
 
     return (
         <div>
-            {content &&
-                <Carousel
-                    carouselId="Carousel-2"
-                    className="white-text center"
-                    options={{
-                        fullWidth: true,
-                        indicators: true
-                    }}
-                >
-                    {content}
-                </Carousel>
-            }
+            <Carousel
+                carouselId="Carousel-2"
+                className="white-text center"
+                options={{
+                    fullWidth: true,
+                    indicators: true
+                }}
+            >
+                {projects.map((project, index) => (
+                    <div key={index} style={{ backgroundImage: project.displayPic }}>
+                        <h2>
+                            {project.Title}
+                        </h2>
+                    </div>
+                ))}
+            </Carousel>
+            <Carousel
+                carouselId="Carousel-2"
+                className="white-text center"
+                options={{
+                    fullWidth: true,
+                    indicators: true
+                }}
+            >
+                {projects.map((project, index) => (
+                    <div key={index} style={{ backgroundImage: project.displayPic }}>
+                        <h2>
+                            {project.Title}
+                        </h2>
+                    </div>
+                ))}
+            </Carousel>
         </div>
     )
 }
