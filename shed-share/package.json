@@ -24,6 +24,7 @@
     "react-images-upload": "^1.2.8",
     "react-materialize": "^3.9.2",
     "react-moment": "^0.9.7",
+    "react-native": "^0.63.2",
     "react-router-auth": "^1.0.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1"

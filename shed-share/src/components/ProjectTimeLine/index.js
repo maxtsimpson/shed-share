@@ -1,5 +1,5 @@
-import React from "react";
-import { Row, Col } from 'react-materialize'
+import React, { ScrollView } from "react";
+import { Row, Col, Container } from 'react-materialize'
 import { Timeline, TimelineEvent } from 'react-event-timeline'
 import Moment from 'react-moment';
 import MaterialIcon from 'material-icons-react';
@@ -13,13 +13,13 @@ function ProjectTimeline({ steps }) {
         let iconName = ''
         switch (categoryName) {
             case 'Research':
-                    iconName = 'biotech'
+                iconName = 'biotech'
                 break;
             case 'Design':
-                    iconName = 'design_services'
+                iconName = 'design_services'
                 break;
             case 'Build':
-                    iconName = 'construction'
+                iconName = 'construction'
                 break;
         }
         return iconName
