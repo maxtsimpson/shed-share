@@ -35,6 +35,7 @@ export default {
         const url = baseURL + '/api/posts'
         return axios.get(url)
         .then(results => results)
+        .catch(error => console.error(error))
     },
 
     saveNewsPost: () => {

@@ -10,16 +10,15 @@ const NewsFeed = props => {
     useEffect(() => {
         API.getNewsPosts()
             .then((results) => {
-                setNewsItems(results)
+                console.log({results})
+                setNewsItems(results.data)
             })
             .catch(error => console.error(error))
     }, [])
 
     return (
         <Row>
-            {/* {newsItems.map((item) => {
-                <NewsItem item={item}></NewsItem>
-            })} */}
+            {newsItems.map((item) => <NewsItem item={item}></NewsItem>)}
         </Row>
     )
 }
