@@ -10,7 +10,6 @@ const NewsFeed = props => {
     useEffect(() => {
         API.getNewsPosts()
             .then((results) => {
-                console.log({results})
                 setNewsItems(results.data)
             })
             .catch(error => console.error(error))

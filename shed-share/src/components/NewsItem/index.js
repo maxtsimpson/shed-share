@@ -1,11 +1,15 @@
 import React, { useEffect } from "react";
 import { Card, CardTitle, Icon } from 'react-materialize'
 
-const NewsItem = post => {
-    let { _id, title, body, videoLink, img, User } = post
+const NewsItem = ({ item }) => {
+    console.log({item})
+    let { _id, title, body, videoLink, img, user_id } = item
     if (!img) {
         img = "https://materializecss.com/images/sample-1.jpg"
     }
+
+    let base64Flag = 'data:image/jpeg;base64,';
+
 
     return (
         <Card
@@ -17,7 +21,7 @@ const NewsItem = post => {
                 ]
             }
             closeIcon={<Icon>close</Icon>}
-            header={<CardTitle image={User.avatar}>{title && <p>title</p>}</CardTitle>}
+            header={<CardTitle image={user_id.avatar}>{title && <p>title</p>}</CardTitle>}
             horizontal
             revealIcon={<Icon>more_vert</Icon>}
         >
