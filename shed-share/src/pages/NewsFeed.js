@@ -16,7 +16,7 @@ const NewsFeed = props => {
     }, [])
 
     return (
-        <Row>
+        <Row id="NewsFeed">
             {newsItems.map((item) => <NewsItem item={item}></NewsItem>)}
         </Row>
     )

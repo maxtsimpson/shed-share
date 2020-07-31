@@ -1,3 +1,15 @@
 /* .row , .col, .row .tabs-content , .row .tabs-content div section {
     height: 100%
 } */
+
+body {
+    height: 100vh;
+}
+
+/* html, body, #root, #root>div {
+    height: 100vh;
+} */
+
+html, body, #root {
+    height: 100vh;
+}

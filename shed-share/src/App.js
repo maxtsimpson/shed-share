@@ -29,10 +29,7 @@ function App() {
     // <ScrollView>
       <AuthContext.Provider value={{ auth, setAuthTokens: setTokens }}>
         <Router>
-          <div>
-            <Nav></Nav>
-          </div>
-          <div>
+            <Nav/>
             <Switch>
               <Route exact path="/" component={Login} />
               <PrivateRoute path="/MyShed" component={MyShed} />
@@ -41,7 +38,6 @@ function App() {
               <Route path="/Login" component={Login} />
               <Route path="/Signup" component={Signup} />
             </Switch>
-          </div>
         </Router>
       </AuthContext.Provider >
     // </ScrollView>

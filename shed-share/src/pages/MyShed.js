@@ -24,12 +24,10 @@ const MyShed = props => {
     }, [])
 
     return(
-        <Row style={{height: "100vh"}}>
-            <Col m={12} s={12}>
-                <ProjectTabs/>
-            </Col>
-        </Row>
+        <ProjectTabs/>
     )
 }
 
 export default MyShed;
+
+//*[@id="root"]/div
