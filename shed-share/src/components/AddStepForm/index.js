@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import M, { Col, TextInput, Row, Select, MaterialIcon } from 'react-materialize'
+import M, { Col, TextInput, Row, Select, Button } from 'react-materialize'
 import ImageUploader from 'react-images-upload';
 import API from "../../utils/API";
+import './style.css'
 
 const timeLineColor = '#212121'
 
@@ -26,20 +27,10 @@ function AddStepForm({ project }) {
             <Col s={12}>
                 <Row>
                     <Col s={12}>
-                        <TextInput
-                            value={description}
-                            onChange={event => {
-                                setDescription(event.target.value);
-                            }}
-                            placeholder="description"
-                        />
-                    </Col>
-                </Row>
-                <Row>
-                    <Col s={12}>
                         <Select
                             id="Select-9"
                             multiple={false}
+                            className="center"
                             onChange={event => {
                                 setCategory(event.target.value);
                             }}
@@ -69,18 +60,32 @@ function AddStepForm({ project }) {
                                 Choose the category
                             </option>
                             <option value="Research">
-                                {/* <MaterialIcon icon="design_services" color={timeLineColor}></MaterialIcon><p> Research</p> */}
                                 Research
                             </option>
                             <option value="Design">
-                                {/* <MaterialIcon icon="design_services" color={timeLineColor}></MaterialIcon><p> Design</p> */}
                                 Design
                             </option>
                             <option value="Build">
-                                {/* <MaterialIcon icon="construction" color={timeLineColor}></MaterialIcon><p> Build</p> */}
                                 Build
                             </option>
                         </Select>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col s={12}>
+                        <TextInput
+                            value={description}
+                            className="left"
+                            onChange={event => {
+                                setDescription(event.target.value);
+                            }}
+                            placeholder="description"
+                        />
+                    </Col>
+                </Row>
+                <Row>
+                    <Col s={8} pull="1">
+                        <Button>Add</Button>
                     </Col>
                 </Row>
             </Col>
