@@ -26,21 +26,19 @@ function App() {
   const auth = useContext(AuthContext);
 
   return (
-    // <ScrollView>
       <AuthContext.Provider value={{ auth, setAuthTokens: setTokens }}>
         <Router>
             <Nav/>
             <Switch>
               <Route exact path="/" component={Login} />
               <PrivateRoute path="/MyShed" component={MyShed} />
-              <Route path="/NewsFeed" component={NewsFeed} />
-              <Route path="/Home" component={Home} />
+              <PrivateRoute path="/NewsFeed" component={NewsFeed} />
+              <PrivateRoute path="/Home" component={Home} />
               <Route path="/Login" component={Login} />
               <Route path="/Signup" component={Signup} />
             </Switch>
         </Router>
       </AuthContext.Provider >
-    // </ScrollView>
   );
 }
 

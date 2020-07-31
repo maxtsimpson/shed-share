@@ -81,6 +81,7 @@ function AddStepForm({ addStepToProject }) {
                 <Row>
                     <Col s={12}>
                         <Button
+                            className='modal-close'
                             onClick={(event) => {
                                 event.preventDefault()
                                 addStepToProject(
