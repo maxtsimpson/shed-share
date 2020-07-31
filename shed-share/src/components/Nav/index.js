@@ -6,8 +6,9 @@ function Nav() {
         <Navbar
             className="blue-grey darken-4"
             alignLinks="right"
-            brand={<a className="brand-logo" href="#">Max Simpson</a>}
+            brand={<a className="brand-logo" href="#">Shed-Share</a>}
             id="mobile-nav"
+            centerChildren
             menuIcon={<Icon>menu</Icon>}
             options={{
                 draggable: true,

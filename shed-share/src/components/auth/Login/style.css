@@ -19,3 +19,11 @@ a, p, .input-field, Button {
     min-width: 55%;
     margin: 5%;
 }
+
+div.input-field.col {
+    width: 100%;
+}
+
+input#loginEmail, input#loginPassword {
+    text-align: center !important;
+}

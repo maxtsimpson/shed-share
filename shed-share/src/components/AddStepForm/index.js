@@ -68,6 +68,7 @@ function AddStepForm({ addStepToProject }) {
                 <Row>
                     <Col s={12}>
                         <TextInput
+                            style={{width: "100%"}}
                             value={description}
                             className="left"
                             onChange={event => {
@@ -78,7 +79,7 @@ function AddStepForm({ addStepToProject }) {
                     </Col>
                 </Row>
                 <Row>
-                    <Col s={8} pull="1">
+                    <Col s={12}>
                         <Button
                             onClick={(event) => {
                                 event.preventDefault()

@@ -71,6 +71,7 @@ function Login() {
         >
           <h1>Login</h1>
           <TextInput
+            id="loginEmail"
             type="email"
             value={email}
             onChange={event => {
@@ -79,6 +80,7 @@ function Login() {
             placeholder="email"
           />
           <TextInput
+            id="loginPassword"
             type="password"
             value={password}
             onChange={event => {

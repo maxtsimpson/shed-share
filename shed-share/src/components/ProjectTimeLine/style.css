@@ -18,7 +18,7 @@ html,body{
 }
 
 div.tabs-content.carousel.carousel-slider {
-    height: 480px;
+    height: 80vh;
 }
 
 div.row {
