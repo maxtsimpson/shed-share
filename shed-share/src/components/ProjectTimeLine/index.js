@@ -26,23 +26,26 @@ function ProjectTimeline({ steps }) {
     }
 
     return (
-        <Timeline style={{ height: "100%" }}>
+        // <Timeline style={{ height: "100%" }}>
+        <Timeline>
             {steps.map((step, index) => {
                 return (
                     <TimelineEvent
                         key={step._id}
                         title={step.category.title}
+                        container="card"
                         createdAt={<Moment local format="hA dddd do MMMM YYYY">
                             {step.createdAt}
                         </Moment>}
                         icon={<MaterialIcon icon={getIconName(step.category.title)} color={timeLineColor}></MaterialIcon>}
                     >
-                        <Row>
+                        <p>{step.description}</p>
+                        {/* <Row>
                             {step.img && <Col><img href={step.img}></img></Col>}
                             <Col>
                                 <p>{step.description}</p>
                             </Col>
-                        </Row>
+                        </Row> */}
                     </TimelineEvent>
                 )
             })}

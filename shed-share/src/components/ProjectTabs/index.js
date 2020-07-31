@@ -25,7 +25,7 @@ function ProjectTabs() {
   return (
     <Tabs
       id="ProjectTabs"
-      className="tab-demo z-depth-1"
+      className=""
       options={{
         swipeable: true
       }}
