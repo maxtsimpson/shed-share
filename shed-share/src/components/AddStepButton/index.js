@@ -6,16 +6,10 @@ import AddStepForm from "../AddStepForm";
 
 // http://react-materialize.github.io/react-materialize/?path=/story/javascript-tabs--swipeable-tabs 
 
-function AddStepButton({project}) {
+function AddStepButton({project, addStepToProject}) {
 
     useEffect(() => {
     }, [])
-
-    const addStepToProject = () => {
-        // API.getProjectList()
-        //     .then(results => setProjects(results.data))
-        //     .catch(error => console.error(error))
-    }
 
     return (
         <Modal
@@ -42,7 +36,7 @@ function AddStepButton({project}) {
             }}
             trigger={<Button node="button">Add another step</Button>}
         >
-            <AddStepForm></AddStepForm>
+            <AddStepForm addStepToProject={addStepToProject}></AddStepForm>
         </Modal>
     )
 

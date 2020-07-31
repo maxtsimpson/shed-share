@@ -20,5 +20,11 @@ router
   .put(projectsController.update)
   .delete(projectsController.remove);
 
+//used for adding a step to an existing project
+// Matches with "/api/projects/step/:id"
+router
+  .route("/projects/step/:id")
+  .post(projectsController.addStep);
+
 
 module.exports = router;

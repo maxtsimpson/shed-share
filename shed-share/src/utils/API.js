@@ -9,6 +9,13 @@ export default {
     //     .then(results => results)
     // },
 
+    updateProject: (project) => {
+        const url = baseURL + '/api/projects/' + project._id
+        return axios.put(url,project)
+        .then(results => results.data)
+        .catch(error => console.error(error))
+    },
+
     getProjectList: () => {
         const url = baseURL + '/api/projects'
         console.log(`getting projectList from ${url}`)

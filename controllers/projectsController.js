@@ -25,7 +25,9 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   update: function(req, res) {
-    db.Project.findOneAndUpdate({ _id: req.params.id }, req.body)
+    console.log("in the projects controller update function")
+    console.log(req.params)
+    db.Project.findOneAndUpdate({ _id: req.params.id }, req.body, {new: true})
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
@@ -34,5 +36,10 @@ module.exports = {
       .then(dbModel => dbModel.remove())
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
-  }
+  },
+  addStep: function(req, res) {
+    db.Project.findOneAndUpdate({ _id: req.params.id }, req.body, {new: true})
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  } 
 };

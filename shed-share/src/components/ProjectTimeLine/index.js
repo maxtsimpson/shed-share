@@ -1,13 +1,29 @@
-import React, { ScrollView } from "react";
+import React, { useState } from "react";
 import { Row, Col, Container } from 'react-materialize'
 import { Timeline, TimelineEvent } from 'react-event-timeline'
 import Moment from 'react-moment';
 import MaterialIcon from 'material-icons-react';
+import AddStepButton from "../AddStepButton";
+import API from "../../utils/API";
 import './style.css'
 
 const timeLineColor = '#212121'
 
-function ProjectTimeline({ steps }) {
+function ProjectTimeline({ project }) {
+
+    const [thisProject, setThisProject] = useState(project);
+
+
+    const addStepToProject = (step) => {
+        console.log("addStepToProject has fired")
+        thisProject.steps.push(step)
+        API.updateProject(thisProject)
+            .then(results => {
+                console.log('results from update project',results)
+                setThisProject(results)
+            })
+            .catch(error => console.error(error))
+    }
 
     const getIconName = (categoryName) => {
         let iconName = ''
@@ -27,8 +43,9 @@ function ProjectTimeline({ steps }) {
 
     return (
         // <Timeline style={{ height: "100%" }}>
+        <>
         <Timeline>
-            {steps.map((step, index) => {
+            {thisProject.steps.map((step, index) => {
                 return (
                     <TimelineEvent
                         key={step._id}
@@ -50,6 +67,8 @@ function ProjectTimeline({ steps }) {
                 )
             })}
         </Timeline>
+        <AddStepButton project={thisProject} addStepToProject={addStepToProject}></AddStepButton>
+        </>
     )
 }
 

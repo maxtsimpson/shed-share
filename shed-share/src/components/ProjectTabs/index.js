@@ -3,7 +3,6 @@ import M, { Tabs, Tab } from 'react-materialize'
 import ImageUploader from 'react-images-upload';
 import API from "../../utils/API";
 import ProjectTimeLine from "../ProjectTimeLine";
-import AddStepButton from "../AddStepButton";
 import "./style.css"
 
 // http://react-materialize.github.io/react-materialize/?path=/story/javascript-tabs--swipeable-tabs 
@@ -45,8 +44,7 @@ function ProjectTabs() {
             }}
             title={project.title}
           >
-            <ProjectTimeLine key={project._id} steps={project.steps}></ProjectTimeLine>
-            <AddStepButton project={project}></AddStepButton>
+            <ProjectTimeLine project={project}></ProjectTimeLine>
           </Tab>
         )
       })}

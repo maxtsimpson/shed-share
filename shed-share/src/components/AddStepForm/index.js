@@ -6,7 +6,7 @@ import './style.css'
 
 const timeLineColor = '#212121'
 
-function AddStepForm({ project }) {
+function AddStepForm({ addStepToProject }) {
 
     const [img, setImage] = useState("");
     const [videoLink, setVideoLink] = useState("");
@@ -15,12 +15,6 @@ function AddStepForm({ project }) {
 
     useEffect(() => {
     }, [])
-
-    const addStepToProject = () => {
-        // API.getProjectList()
-        //     .then(results => setProjects(results.data))
-        //     .catch(error => console.error(error))
-    }
 
     return (
         <Row>
@@ -85,7 +79,16 @@ function AddStepForm({ project }) {
                 </Row>
                 <Row>
                     <Col s={8} pull="1">
-                        <Button>Add</Button>
+                        <Button
+                            onClick={(event) => {
+                                event.preventDefault()
+                                addStepToProject(
+                                    {
+                                        description: description,
+                                        category: { title: category },
+                                    })
+                            }}>
+                                Add</Button>
                     </Col>
                 </Row>
             </Col>
