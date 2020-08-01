@@ -22,7 +22,8 @@ function Login() {
   console.log({Auth})
 
   function postLogin() {
-    const loginURL = (process.env.ROOT_URL || "http://localhost:3001") + "/api/auth/login"
+    const baseURL = (process.env.ROOT_URL || "http://localhost") + ":" + (process.env.PORT || "3001" )
+    const loginURL = baseURL + "/api/auth/login"
     console.log(loginURL)
     axios.post(loginURL, {
       email,
