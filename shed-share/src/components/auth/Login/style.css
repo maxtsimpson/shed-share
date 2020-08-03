@@ -26,4 +26,5 @@ div.input-field.col {
 
 input#loginEmail, input#loginPassword {
     text-align: center !important;
+    width: 60%
 }
