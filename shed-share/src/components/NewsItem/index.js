@@ -4,7 +4,7 @@ import { Card, CardTitle, Icon } from 'react-materialize'
 import './style.css'
 
 const NewsItem = ({ item }) => {
-    console.log({item})
+    console.log({ item })
 
     let { _id, title, body, videoLink, user_id, img } = item
 
@@ -16,7 +16,7 @@ const NewsItem = ({ item }) => {
         var bytes = [].slice.call(new Uint8Array(buffer));
         bytes.forEach((b) => binary += String.fromCharCode(b));
         const base64string = base64.encode(binary);
-        console.log({base64string})
+        console.log({ base64string })
         return base64string
     };
 
@@ -24,14 +24,14 @@ const NewsItem = ({ item }) => {
         if (img) {
             console.log("image exists converting to base64")
             const imageStr = arrayBufferToBase64(img)
-            console.log({imageStr})
+            console.log({ imageStr })
             setImage(base64Flag + imageStr)
         } else {
             if (user_id.avatar) {
                 setImage(user_id.avatar)
             }
-        }    
-    },[])
+        }
+    }, [])
 
 
     return (

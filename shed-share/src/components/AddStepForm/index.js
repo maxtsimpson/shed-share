@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import M, { Col, TextInput, Row, Select, Button } from 'react-materialize'
-import ImageUploader from 'react-images-upload';
-import API from "../../utils/API";
+// import ImageUploader from 'react-images-upload';
+// import API from "../../utils/API";
 import './style.css'
 
 const timeLineColor = '#212121'

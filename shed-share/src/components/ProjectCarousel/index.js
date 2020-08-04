@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import M, { Carousel, Icon } from 'react-materialize'
-import ImageUploader from 'react-images-upload';
+import { Carousel } from 'react-materialize'
 import API from "../../utils/API";
 
 

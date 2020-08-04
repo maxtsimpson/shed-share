@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { Link, useHistory } from 'react-router-dom';
-import M, { Card, Form, TextInput, Button, Navbar, Icon, NavItem } from 'react-materialize'
+import M, { Card, TextInput, Button } from 'react-materialize'
 import axios from 'axios';
-import { useAuth } from "../../../context/auth.js";
 import './style.css'
 
 function Signup() {
