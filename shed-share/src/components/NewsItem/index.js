@@ -45,7 +45,14 @@ const NewsItem = ({ item }) => {
                 ]
             }
             closeIcon={<Icon>close</Icon>}
-            header={<CardTitle image={image} ></CardTitle>}
+            header={
+                <>
+                    <div style={{"flexDirection": "column"}}>
+                        <CardTitle image={image} ></CardTitle>
+                        <p>{`${user_id.firstName} ${user_id.lastName}`}</p>
+                    </div>
+                </>
+            }
             horizontal
             revealIcon={<Icon>more_vert</Icon>}
         >
