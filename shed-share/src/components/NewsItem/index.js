@@ -49,14 +49,14 @@ const NewsItem = ({ item }) => {
                 <>
                     <div style={{"flexDirection": "column"}}>
                         <CardTitle image={image} ></CardTitle>
-                        <p>{`${user_id.firstName} ${user_id.lastName}`}</p>
+                        <p className="center-align">{`${user_id.firstName} ${user_id.lastName}`}</p>
                     </div>
                 </>
             }
             horizontal
             revealIcon={<Icon>more_vert</Icon>}
         >
-            {title && <h5>{title}</h5>}
+            {title && <h5 className="center-align">{title}</h5>}
             {body}
         </Card>
     )
