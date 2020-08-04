@@ -24,7 +24,6 @@ function ProjectTabs() {
   return (
     <Tabs
       id="ProjectTabs"
-      className="blue-grey-text text-darken-4"
       style={{height: "100%"}}
       options={{
         swipeable: true
