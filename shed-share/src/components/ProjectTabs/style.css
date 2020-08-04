@@ -1,15 +1,26 @@
-/* .row , .col, .row .tabs-content , .row .tabs-content div section {
-    height: 100%
-} */
-
 body {
     height: 100vh;
 }
 
-/* html, body, #root, #root>div {
-    height: 100vh;
-} */
-
 html, body, #root {
     height: 100vh;
+}
+
+.tabs .tab a, li.indicator {
+    background-color: #455a64;
+    color: white;
+}
+
+.tabs .tab a.active {
+    background-color: white;
+    color: #455a64;
+}
+
+.tabs .indicator {
+    background-color: white;
+}
+
+.tabs .tab a:hover {
+    background-color:#eee;
+    color:#000;
 }
