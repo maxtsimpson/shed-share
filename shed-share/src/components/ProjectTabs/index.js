@@ -24,7 +24,6 @@ function ProjectTabs() {
   return (
     <Tabs
       id="ProjectTabs"
-      className=""
       style={{height: "100%"}}
       options={{
         swipeable: true
@@ -35,7 +34,6 @@ function ProjectTabs() {
           <Tab
             style={{height: "100%"}}
             key={index}
-            className="white"
             options={{
               duration: 300,
               onShow: null,

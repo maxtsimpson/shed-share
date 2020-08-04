@@ -1,8 +1,5 @@
 import React, { useEffect, useState } from "react";
-import ProjectTimeline from '../components/ProjectTimeLine'
-import ProjectCarousel from "../components/ProjectCarousel";
 import ProjectTabs from "../components/ProjectTabs";
-import { Row, Col, Card, CardTitle, Icon } from 'react-materialize'
 import API from "../utils/API";
 
 const MyShed = props => {
@@ -29,5 +26,3 @@ const MyShed = props => {
 }
 
 export default MyShed;
-
-//*[@id="root"]/div

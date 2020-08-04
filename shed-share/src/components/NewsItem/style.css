@@ -2,6 +2,8 @@
     border-radius: 5%;
     height: 128px;
     width: 128px;
-    /* max-height: 128px;
-    max-width: 128px; */
+}
+
+.card.horizontal .card-image {
+    max-width: 100%;
 }

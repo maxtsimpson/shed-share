@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Row, Col, Container } from 'react-materialize'
 import { Timeline, TimelineEvent } from 'react-event-timeline'
 import Moment from 'react-moment';
 import MaterialIcon from 'material-icons-react';
