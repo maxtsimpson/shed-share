@@ -8,7 +8,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
-import { useAuth, AuthContext } from './context/auth';
+import { AuthContext } from './context/auth';
 import PrivateRoute from './utils/PrivateRoute';
 
 function App() {
@@ -19,14 +19,8 @@ function App() {
     setAuthTokens(data);
   }
 
-  // const { setAuthTokens } = useAuth();
-
-  // <AuthContext.Provider value={{ authTokens, setAuthTokens: setTokens }}></AuthContext.Provider>
-
-  const auth = useContext(AuthContext);
-
   return (
-      <AuthContext.Provider value={{ auth, setAuthTokens: setTokens }}>
+      <AuthContext.Provider value={{ authTokens, setAuthTokens: setTokens }}>
         <Router>
             <Nav/>
             <Switch>

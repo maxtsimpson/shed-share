@@ -4,7 +4,6 @@ import API from "../utils/API";
 import { Row } from 'react-materialize'
 
 const NewsFeed = props => {
-
     const [newsItems, setNewsItems] = useState([])
 
     useEffect(() => {
@@ -17,7 +16,7 @@ const NewsFeed = props => {
 
     return (
         <Row id="NewsFeed">
-            {newsItems.map((item) => <NewsItem item={item}></NewsItem>)}
+            {newsItems.map((item) => <NewsItem key={item._id} item={item}></NewsItem>)}
         </Row>
     )
 }
