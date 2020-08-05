@@ -19,6 +19,7 @@ function Login() {
 
   function postLogin() {
     console.log('process.env.ROOT_URL',process.env.ROOT_URL)
+    console.log('process.env.PORT',process.env.PORT)
     const baseURL = (process.env.ROOT_URL || "http://localhost") + ":" + (process.env.PORT || "3001" )
     const loginURL = baseURL + "/api/auth/login"
     console.log('login URL',loginURL)
