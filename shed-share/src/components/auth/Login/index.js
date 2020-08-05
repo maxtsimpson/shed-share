@@ -18,9 +18,10 @@ function Login() {
   const { setAuthTokens } = useAuth();
 
   function postLogin() {
+    console.log('process.env.ROOT_URL',process.env.ROOT_URL)
     const baseURL = (process.env.ROOT_URL || "http://localhost") + ":" + (process.env.PORT || "3001" )
     const loginURL = baseURL + "/api/auth/login"
-    console.log(loginURL)
+    console.log('login URL',loginURL)
     axios.post(loginURL, {
       email,
       password
