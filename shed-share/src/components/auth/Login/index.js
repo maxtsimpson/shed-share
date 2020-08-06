@@ -20,7 +20,8 @@ function Login() {
   function postLogin() {
     console.log('process.env.ROOT_URL',process.env.ROOT_URL)
     console.log('process.env.PORT',process.env.PORT)
-    const baseURL = (process.env.ROOT_URL || "http://localhost") + ":" + (process.env.PORT || "3001" )
+    const port = process.env.PORT ? ":" + process.env.PORT : ""
+    const baseURL = process.env.ROOT_URL + port
     const loginURL = baseURL + "/api/auth/login"
     console.log('login URL',loginURL)
     axios.post(loginURL, {
