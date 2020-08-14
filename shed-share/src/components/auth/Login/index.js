@@ -18,11 +18,13 @@ function Login() {
   const { setAuthTokens } = useAuth();
 
   function postLogin() {
-    console.log('process.env.ROOT_URL',process.env.ROOT_URL)
-    console.log('process.env.PORT',process.env.PORT)
-    const port = process.env.PORT ? ":" + process.env.PORT : ""
-    const baseURL = process.env.ROOT_URL + port
-    const loginURL = baseURL + "/api/auth/login"
+
+    let loginURL = "/api/auth/login"
+
+    if (process.env.NODE_ENV === 'development') {
+      loginURL = 'http://localhost:3001/api/auth/login'
+    }
+
     console.log('login URL',loginURL)
     axios.post(loginURL, {
       email,
