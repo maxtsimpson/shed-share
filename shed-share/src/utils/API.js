@@ -1,7 +1,8 @@
 import axios from "axios";
 
 // Gets my github repos and returns them as "projects"
-const baseURL = (process.env.ROOT_URL || "http://localhost") + ":" + (process.env.PORT || "3001" )
+let baseURL
+process.env.NODE_ENV === 'development' ? baseURL = 'http://localhost:3001' : baseURL = ''
 
 export default {
     // getProjectsForUser: (user) => {

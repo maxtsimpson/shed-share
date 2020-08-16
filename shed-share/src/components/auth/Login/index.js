@@ -19,11 +19,9 @@ function Login() {
 
   function postLogin() {
 
-    let loginURL = "/api/auth/login"
-
-    if (process.env.NODE_ENV === 'development') {
-      loginURL = 'http://localhost:3001/api/auth/login'
-    }
+    let baseURL
+    process.env.NODE_ENV === 'development' ? baseURL = 'http://localhost:3001' : baseURL = ''
+    let loginURL = baseURL + "/api/auth/login"
 
     console.log('login URL',loginURL)
     axios.post(loginURL, {
