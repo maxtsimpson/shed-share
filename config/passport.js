@@ -6,6 +6,8 @@ const { Strategy: FacebookStrategy } = require('passport-facebook');
 
 const db = require('../models');
 
+let baseURL
+process.env.NODE_ENV === 'development' ? baseURL = 'http://localhost:3001' : baseURL = ''
 
 /**
  * Sign in using Email and Password.
@@ -53,7 +55,7 @@ passport.use(new LocalStrategy(
   passport.use(new FacebookStrategy({
     clientID: process.env.FB_APPID,
     clientSecret: process.env.FB_SECRET,
-    callbackURL: `${process.env.ROOT_URL}auth/facebook/callback`,
+    callbackURL: baseURL + 'auth/facebook/callback',
     profileFields: ['name', 'email']
   },
   function(accessToken, refreshToken, profile, done) {

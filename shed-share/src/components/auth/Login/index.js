@@ -10,6 +10,8 @@ import './style.css'
 //https://medium.com/better-programming/building-basic-react-authentication-e20a574d5e71
 
 function Login() {
+  let baseURL
+  process.env.NODE_ENV === 'development' ? baseURL = 'http://localhost:3001' : baseURL = ''
 
   const [isLoggedIn, setLoggedIn] = useState(false);
   const [isError, setIsError] = useState(false);
@@ -18,9 +20,6 @@ function Login() {
   const { setAuthTokens } = useAuth();
 
   function postLogin() {
-
-    let baseURL
-    process.env.NODE_ENV === 'development' ? baseURL = 'http://localhost:3001' : baseURL = ''
     let loginURL = baseURL + "/api/auth/login"
 
     console.log('login URL',loginURL)
