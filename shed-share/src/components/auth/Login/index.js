@@ -41,12 +41,14 @@ function Login() {
   }
 
   function postFBLogin() {
-    axios.get(baseURL + "/api/auth/facebook", {
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Content-Type': 'application/json',
-      },
-    }).then(result => {
+    axios.get(baseURL + "/api/auth/facebook", 
+    // {
+    //   headers: {
+    //     'Access-Control-Allow-Origin': '*',
+    //     'Content-Type': 'application/json',
+    //   },
+    // }
+    ).then(result => {
       if (result.status === 200) {
         setAuthTokens(result.data);
         setLoggedIn(true);

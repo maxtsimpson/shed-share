@@ -11,7 +11,6 @@ const cors = require('cors')
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-app.use(cors())
 //use compression 
 app.use(compression({}))
 
@@ -28,13 +27,15 @@ app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true 
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.all('/*', function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  next();
-});
+// app.all('/*', function(req, res, next) {
+//   res.header("Access-Control-Allow-Origin", "*");
+//   next();
+// });
 
 // Add routes, both API and view
 app.use("/api", routes);
+
+app.use(cors());
 
 // Send every other request to the React app
 // Define any API routes before this runs
